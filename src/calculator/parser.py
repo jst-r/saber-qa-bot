@@ -36,6 +36,3 @@ def infix_to_postfix(infix: Iterable[str]):
     
     return postfix
 
-print(infix_to_postfix(tokenize("1 + 2 + 3 * 3")))
-print(tokenize("1+2+3"))
-print(tokenize("123 + 2 "))
