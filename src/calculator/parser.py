@@ -1,8 +1,7 @@
 import re
 from typing import Iterable, List, Union
 
-OPERATORS = set(['+', '-', '*', '/', '^'])
-PRECEDENCE = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
+from .constants import OPERATORS_SET, PRECEDENCE
 
 
 def tokenize(expr: str) -> List[int]:
@@ -23,7 +22,7 @@ def infix_to_postfix(infix: Iterable[str]):
             postfix.append(token)
             continue
 
-        if token not in OPERATORS:
+        if token not in OPERATORS_SET:
             raise ValueError("Unknown operator")
 
         while stack and PRECEDENCE[token] <= PRECEDENCE[stack[-1]]:
