@@ -23,16 +23,18 @@ def infix_to_postfix(infix: Iterable[str]):
             postfix.append(token)
             continue
 
+        if token not in OPERATORS:
+            raise ValueError("Unknown operator")
+
         while stack and PRECEDENCE[token] <= PRECEDENCE[stack[-1]]:
             if token == stack[-1] == '^':
                 break
 
             postfix.append(stack.pop())
-        
+
         stack.append(token)
 
     while stack:
         postfix.append(stack.pop())
-    
-    return postfix
 
+    return postfix
