@@ -37,5 +37,9 @@ async def auth(message: types.Message):
 async def auth(message: types.Message):
     await message.answer("Войдите в бота с помощью команды /login <пароль>")
 
-if __name__ == '__main__':
+
+def main():
     executor.start_polling(dp, skip_updates=True)
+
+if __name__ == '__main__':
+    main()
