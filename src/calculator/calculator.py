@@ -5,21 +5,21 @@ from src.calculator.parser import infix_to_postfix, tokenize
 
 
 def eval_RPN(rpn: Iterable[str]):
-    stack = []
+    operands = []
     
     for token in rpn:
         if token.isnumeric():
-            stack.append(float(token))
+            operands.append(float(token))
             continue
         
-        b, a = [stack.pop(), stack.pop()]
+        b, a = [operands.pop(), operands.pop()]
         c = OPERATORS[token](a, b)
-        stack.append(c)
+        operands.append(c)
     
-    if len(stack) != 1:
+    if len(operands) != 1:
         raise ValueError("Invalid expression")
     
-    return stack[0]
+    return operands[0]
 
 def eval_str(expr: str):
     tokens = tokenize(expr)
