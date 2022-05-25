@@ -1,4 +1,4 @@
-from src.calculator.constants import OPERATORS_SET
+from calculator.constants import OPERATORS_SET
 
 
 AUTH_SUCCESS = f"""

@@ -1,10 +1,10 @@
 import logging
 
 from aiogram import Bot, Dispatcher, executor, types
-from src.calculator.calculator import eval_str
+from calculator.calculator import eval_str
 
-from src.tg_bot.auth import authorize, is_authorized
-from src.tg_bot.text import AUTH_FAIL, AUTH_SUCCESS
+from tg_bot.auth import authorize, is_authorized
+from tg_bot.text import AUTH_FAIL, AUTH_SUCCESS
 
 # I really shouldn't be publishing a private key to a pulic repo. But this bot is only for demonstarion, and I want it to be as easy as possible to run this.
 API_TOKEN = '5391576696:AAFTV7sqVHXhp7VmYUgdkJAP8WaGsPvrQw0'

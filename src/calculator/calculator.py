@@ -1,7 +1,7 @@
 from typing import Iterable
 
-from src.calculator.constants import OPERATORS, OPERATORS_SET
-from src.calculator.parser import infix_to_postfix, tokenize
+from .constants import OPERATORS, OPERATORS_SET
+from .parser import infix_to_postfix, tokenize
 
 
 def eval_RPN(rpn: Iterable[str]):
